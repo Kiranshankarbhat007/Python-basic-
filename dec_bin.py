@@ -1,6 +1,6 @@
 l =[]
 d =[]
-n = int(input("enter the binary number :"))
+n = int(input("enter the decimal number :"))
 s = n
 while s >0:
     reminder = s%2
