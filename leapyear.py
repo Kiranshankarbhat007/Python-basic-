@@ -1,10 +1,15 @@
-s = int(input("enter the year"))
+year = int(input("Please Enter the Year : "))
+if (year % 4) == 0:
+   if (year % 100) == 0:
+       if (year % 400) == 0:
+           print("{0} is a leap year".format(year))
+       else:
+           print("{0} is not a leap year".format(year))
+   else:
+       print("{0} is a leap year".format(year))
+else:
+   print("{0} is not a leap year".format(year))
 
-def leap(s):
-    if (s%4==0):
-        return ("it is a leap year")
-    else:
-        return ("it is not a leap year")
 
-result = leap(s)
-print result
+
+
