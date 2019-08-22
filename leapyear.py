@@ -9,7 +9,10 @@ if (year % 4) == 0:
        print("{0} is a leap year".format(year))
 else:
    print("{0} is not a leap year".format(year))
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> b34f4a4e4ad52a8ae0964d8c332c862a1bce2b40
