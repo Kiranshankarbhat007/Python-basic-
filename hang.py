@@ -1,23 +1,31 @@
 import random
 
-words = ['mercedes','hummer','ford','porche','cadillac',
-'mustang','bmw','lamborghini','mahindra','maruthi',
-'kia','mg','chevrolet','audi','jeep','datsun',
-'astonmartin','bentley','bugatti','ferrari','fiat',
-'honda','jagur','hyundai','landrover','lexus',
-'maserati','manza','mclaren','mitsubishi','pagani',
-'tata','tesla','suzuki','volvo','renault','rollsroyce',
-'volkswagen','nissan']
+def selection():
+    words = ['mercedes','hummer','ford','porche','cadillac',
+    'mustang','bmw','lamborghini','mahindra','maruthi',
+    'kia','mg','chevrolet','audi','jeep','datsun',
+    'astonmartin','bentley','bugatti','ferrari','fiat',
+    'honda','jagur','hyundai','landrover','lexus',
+    'maserati','manza','mclaren','mitsubishi','pagani',
+    'tata','tesla','suzuki','volvo','renault','rollsroyce',
+    'volkswagen','nissan']
 
 # with open("../../Downloads/words.txt") as f:
 #     words = f.read()
 #     word = words.split(" ")
+    # print word
 
-# random.shuffle(words)
-# word = word[0]
-word = random.choice(words)
+    # random.shuffle(words)
+    # word = word[0]
+    word = random.choice(words)
+    return word
+word = selection()
+# print word
 
 def hang(word):
+    alpha = ['a','b','c','d','e','f','g','h','i','j',
+        'k','l','m','n','o','p','q','r','s','t',
+        'u','v','w','x','y','z']
     gwords = []
     display = []
     display.extend(word)
@@ -30,18 +38,18 @@ def hang(word):
 
     count =0
     while count <len(word):
-        # for pyton 2 version     
-        # guess = raw_input("guess a letter: ")
-
-        # for python 3 version
-        guess = str(input("guess a letter"))
-
-        if guess not in gwords:
-            gwords.append(guess)
-            print (gwords)
+        
+        guess = raw_input("Enter your guess: ")
+        guess = guess.lower()
+        if guess in alpha:
+            if guess not in gwords:
+                gwords.append(guess)
+                print (gwords)
+            else:
+                print ("u already guessed the letter")
+                print (gwords)
         else:
-            print ("u already guessed the letter")
-            print (gwords)
+            print ('Entered guess is invalid')
     
         if guess not in display:
             for i in range(len(word)):
@@ -51,6 +59,5 @@ def hang(word):
     
         print (' '.join(display))
     print ("you gussed the word")
+hang(word)
 
-if __name__ == '__main__':
-    hang(word)
