@@ -38,14 +38,12 @@ def hang(word):
 
     chance = 0
     count = 0
-    d = 5
-    f = 5
+    no_of_chance = 5
+    f = no_of_chance
     
     while count <len(word):
         guess = raw_input("Enter your guess: ")
         guess = guess.lower()
-        # chance = chance + 1
-        # print chance
         if guess in alpha:
             if guess not in gwords:
                 gwords.append(guess)
@@ -72,11 +70,11 @@ def hang(word):
                 print 'your guess is wrong'
                 print 'you have',f,'chance' 
                         
-        if chance == d:
+        if chance == no_of_chance:
             # print "your chancecs are over"
-            print "YOU LOST THE GAME"
+            print " YOU LOST THE GAME "
             break
     else:
-        print ("YOU WON THE GAME ")
+        print (" YOU WON THE GAME ")
     
 hang(word)
